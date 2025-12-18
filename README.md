@@ -17,14 +17,14 @@ A Gradle plugin that automatically downloads and configures Checkstyle with comm
 #### Using Kotlin DSL (build.gradle.kts)
 ```kotlin
 plugins {
-    id("com.gpo.commercial-trading-checkstyle") version "1.0.0-SNAPSHOT"
+    id("com.gpo.commercialtrading.checkstyle") version "1.0.0-SNAPSHOT"
 }
 ```
 
 #### Using Groovy DSL (build.gradle)
 ```groovy
 plugins {
-    id 'com.gpo.commercial-trading-checkstyle' version '1.0.0-SNAPSHOT'
+    id 'com.gpo.commercialtrading.checkstyle' version '1.0.0-SNAPSHOT'
 }
 ```
 
@@ -70,11 +70,11 @@ commercialTradingCheckstyle {
 Root `build.gradle.kts`:
 ```kotlin
 plugins {
-    id("com.gpo.commercial-trading-checkstyle") version "1.0.0-SNAPSHOT" apply false
+    id("com.gpo.commercialtrading.checkstyle") version "1.0.0-SNAPSHOT" apply false
 }
 
 subprojects {
-    apply(plugin = "com.gpo.commercial-trading-checkstyle")
+    apply(plugin = "com.gpo.commercialtrading.checkstyle")
 
     commercialTradingCheckstyle {
         excludePatterns.add("**/api/**")
@@ -154,7 +154,7 @@ Then apply the plugin:
 
 ```kotlin
 plugins {
-    id("com.gpo.commercial-trading-checkstyle") version "1.0.0"
+    id("com.gpo.commercialtrading.checkstyle") version "1.0.0"
 }
 ```
 
@@ -198,7 +198,7 @@ tasks.withType(Checkstyle).configureEach {
 ### After (using plugin)
 ```kotlin
 plugins {
-    id("com.gpo.commercial-trading-checkstyle") version "1.0.0-SNAPSHOT"
+    id("com.gpo.commercialtrading.checkstyle") version "1.0.0-SNAPSHOT"
 }
 
 commercialTradingCheckstyle {

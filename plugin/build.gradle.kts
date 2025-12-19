@@ -4,8 +4,8 @@ plugins {
     `maven-publish`
 }
 
-group = "com.gpo.gradle"
-version = "1.0.0-SNAPSHOT"
+group = "com.global.commercial-trading"
+version = rootProject.version
 
 repositories {
     gradlePluginPortal()
@@ -19,7 +19,7 @@ dependencies {
 gradlePlugin {
     plugins {
         create("commercialTradingCheckstyle") {
-            id = "com.gpo.commercial-trading-checkstyle"
+            id = "com.gpo.commercialtrading.checkstyle"
             implementationClass = "com.gpo.gradle.checkstyle.CommercialTradingCheckstylePlugin"
             displayName = "Commercial Trading Checkstyle Plugin"
             description = "Automatically downloads and configures checkstyle for commercial trading projects"
@@ -49,10 +49,6 @@ publishing {
                     "https://nexus.shared.global.com/repository/maven-releases/"
                 }
             )
-            credentials {
-                username = project.findProperty("nexusUsername")?.toString() ?: System.getenv("NEXUS_USERNAME")
-                password = project.findProperty("nexusPassword")?.toString() ?: System.getenv("NEXUS_PASSWORD")
-            }
         }
     }
 

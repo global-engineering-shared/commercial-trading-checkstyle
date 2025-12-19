@@ -52,27 +52,21 @@ publishing {
         }
     }
 
-    publications {
-        create<MavenPublication>("pluginMaven") {
-            groupId = project.group.toString()
-            artifactId = "commercial-trading-checkstyle-plugin"
-            version = project.version.toString()
+    publications.withType<MavenPublication>().configureEach {
+        pom {
+            name.set("Commercial Trading Checkstyle Plugin")
+            description.set("Gradle plugin for applying commercial trading checkstyle standards")
+            url.set("https://github.com/global-engineering-shared/commercial-trading-checkstyle")
 
-            pom {
-                name.set("Commercial Trading Checkstyle Plugin")
-                description.set("Gradle plugin for applying commercial trading checkstyle standards")
-                url.set("https://github.com/global-engineering-shared/commercial-trading-checkstyle")
-
-                licenses {
-                    license {
-                        name.set("Internal Use Only")
-                    }
+            licenses {
+                license {
+                    name.set("Internal Use Only")
                 }
+            }
 
-                developers {
-                    developer {
-                        organization.set("Global Engineering")
-                    }
+            developers {
+                developer {
+                    organization.set("Global Engineering")
                 }
             }
         }
